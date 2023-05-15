@@ -11,6 +11,9 @@ const { notFound, errorhandle } = require('./middleware/errorHandler');
 app.use(cors());
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+app.get("/", (req, res) => {
+    console.log("home")
+})
 app.use('/api/user', authRouter)
 
 app.use(notFound)
